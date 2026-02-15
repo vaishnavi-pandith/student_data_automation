@@ -1,3 +1,4 @@
+ HEAD
 # Student Data Automation & Ranking System (Python)
 
 A Python-based automation tool to process and organize student data collected via Google Forms (Excel/CSV).
@@ -21,3 +22,7 @@ It supports cleaning, sorting (single/multi-column), optional filtering, ranking
 ```bash
 pip install -r requirements.txt
 python src/main.py
+
+# student_data_automation
+my first project
+
