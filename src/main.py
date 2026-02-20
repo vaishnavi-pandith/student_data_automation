@@ -12,7 +12,6 @@ from sorter import sort_dataframe
 from ranker import add_rank, top_n
 from exporter import export_excel, export_csv
 
-
 DEFAULT_DATA_PATH = Path("data/responses.xlsx")
 OUTPUT_DIR = Path("output")
 
@@ -25,7 +24,9 @@ def _print_cols(df: pd.DataFrame) -> None:
 
 
 def _ask_path() -> str:
-    raw = input(f"Enter file path (or press Enter for default: {DEFAULT_DATA_PATH}): ").strip()
+    raw = input(
+        f"Enter file path (or press Enter for default: {DEFAULT_DATA_PATH}): "
+    ).strip()
     return str(DEFAULT_DATA_PATH) if raw == "" else raw
 
 
@@ -39,7 +40,9 @@ def _ask_yes_no(prompt: str) -> bool:
         print("Please type y or n.")
 
 
-def _ask_int(prompt: str, min_val: int | None = None, max_val: int | None = None) -> int:
+def _ask_int(
+    prompt: str, min_val: int | None = None, max_val: int | None = None
+) -> int:
     while True:
         raw = input(prompt + ": ").strip()
         try:
@@ -86,7 +89,11 @@ def _apply_optional_filter(df: pd.DataFrame) -> pd.DataFrame:
         return df
 
     col = _choose_single_column(df, "Filter")
-    value = input(f"Enter the value to match for '{col}' (case-insensitive): ").strip().lower()
+    value = (
+        input(f"Enter the value to match for '{col}' (case-insensitive): ")
+        .strip()
+        .lower()
+    )
 
     out = df.copy()
     # Convert to string for matching; NaN-safe
@@ -132,7 +139,9 @@ def main():
         if _ask_yes_no("\nDo you want to add ranking (Top N) based on a score column?"):
             score_col = _choose_single_column(df_sorted, "Ranking score")
             higher_is_better = _ask_yes_no("Higher score is better?")
-            df_ranked = add_rank(df_sorted, score_col=score_col, higher_is_better=higher_is_better)
+            df_ranked = add_rank(
+                df_sorted, score_col=score_col, higher_is_better=higher_is_better
+            )
             n = _ask_int("Enter N for Top N", 1, max(1, len(df_ranked)))
             df_final = top_n(df_ranked.sort_values("rank"), n)
         else:
@@ -150,7 +159,9 @@ def main():
             out_csv = export_csv(df_final, str(out_base.with_suffix(".csv")))
             print(f"✅ Exported CSV to: {out_csv}")
 
-        print("\nDone. You can upload the Excel/CSV output in your LinkedIn 'Featured' or GitHub releases.")
+        print(
+            "\nDone. You can upload the Excel/CSV output in your LinkedIn 'Featured' or GitHub releases."
+        )
         return 0
 
     except Exception as e:
