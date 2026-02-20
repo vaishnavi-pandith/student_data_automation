@@ -1,223 +1,117 @@
-📊 Student Data Automation & Ranking System (Python)
-HEAD
-
-🔍 Why I built this:
-While working with Google Forms and Excel sheets for academic data, I noticed that manual sorting, filtering, and ranking quickly becomes repetitive and error-prone.
-This project automates that workflow and focuses on clean data handling and strong fundamentals, not just surface-level output.
-
-
-🚀 What this project does:
-A Python-based command-line tool that:
-* Loads CSV / Excel files (Google Forms compatible)
-* Cleans messy column names automatically
-* Handles missing and inconsistent data safely
-* Supports single & multi-column sorting
-* Ranks students using dense ranking
-* Extracts Top-N performers
-* Exports clean, structured results to Excel/CSV
-
-🧠 Key Engineering Ideas Used:
-* Defensive file handling (encoding-safe CSV loading)
-* Column normalization to handle inconsistent headers
-* Stable sorting for predictable multi-column results
-* Dense ranking to handle score ties correctly
-* Modular design (each file has a single responsibility)
-  This project is intentionally built as a foundations-focused system, similar to real internal tools used by teams.
+# 📊 Student Data Automation & Ranking System (Python)
 
-🛠️ Tech Stack:
-* Python
-* Pandas
-* OpenPyXL
-* Regular Expressions
-* Command-Line Interface (CLI)
+A Python-based automation tool designed to clean, sort, rank, and export student data collected from Google Forms (Excel/CSV).  
+Built using a **modular, production-style architecture** to handle real-world messy data reliably.
 
-📁 Project Structure
-student-data-automation/
-│
-├── data/        # Input files (CSV / Excel)
-├── output/      # Generated ranked results
-├── src/
-│   ├── loader.py
-│   ├── cleaner.py
-│   ├── sorter.py
-│   ├── ranker.py
-│   ├── exporter.py
-│   └── main.py
-│
-├── requirements.txt
-└── README.md
+---
 
+## 🚀 Why this project?
 
-▶️ How to run:
- pip install -r requirements.txt
- python src/main.py
+Manual processing of student data (marks, CGPA, rankings) from Excel sheets is:
+- Error-prone  
+- Time-consuming  
+- Hard to standardize  
 
+This project automates the entire workflow — from raw form responses to ranked, export-ready results — using clean, reusable Python modules.
 
-The program guides you interactively to:
-* select file
-* apply filters
-* choose sorting & ranking logic
-* export results
+---
 
-📌 Example Use Cases:
-* Rank students by CGPA
-* Extract Top-10 performers
-* Filter by section or branch
-* Clean Google Form responses automatically
+## 🧩 Key Features
 
-⚠️ Limitations (intentional):
-* CLI-based (no GUI yet)
-* Filtering currently supports equality checks
-* Designed for structured tabular data
-  These were deliberate choices to keep the focus on correctness and clarity.
+- 📥 Supports **CSV & Excel** input files  
+- 🧹 Data cleaning pipeline:
+  - Column normalization
+  - Empty row removal
+  - Safe numeric conversion  
+- 🔀 **Multi-column sorting** (e.g., CGPA → Name → USN)  
+- 🏆 **Top-N ranking** using dense ranking  
+- 🔍 Optional filtering by column values  
+- 📤 Export results to **Excel & CSV**  
+- 💻 Interactive **CLI-based workflow**
 
-🔮 Future Improvements:
-* Numeric range filters (e.g., CGPA > 8.5)
-* Multiple filter conditions
-* Config-based execution (no prompts)
-* Unit tests & logging
-* Simple web or GUI interface
+---
 
-🎯 What I learned:
-* Handling real-world data inconsistencies
-* Writing defensive, readable Python code
-* Designing modular data pipelines
-* Translating messy input into structured output
+## 🏗️ Project Structure
 
-👤 About Me:
-Computer Science Engineering (Artificial Intelligence & Machine Learning) student focused on strong fundamentals, problem solving, and building reliable systems.
-Currently seeking Software Engineering Internship opportunities.
+## 🛠️ Tech Stack:
 
-⭐ If you’re a recruiter or engineer,
-I’d love feedback, suggestions, or a quick conversation about this project or internships.
+- **Python** – Core programming language
+- **Pandas** – Data processing and manipulation
+- **OpenPyXL** – Excel file handling
+- **CSV handling** – Reading and writing CSV files
+- **Command Line Interface (CLI)** – User interaction
+- **Black** – Code formatting and consistency
 
-🔍 Why I built this
+  ## 🧠 Concepts Used:
 
-While working with Google Forms and Excel sheets for academic data, I noticed that manual sorting, filtering, and ranking quickly becomes repetitive and error-prone.
-This project automates that workflow and focuses on clean data handling and strong fundamentals, not just surface-level output.
+- Modular programming
+- File handling (CSV & Excel)
+- Data cleaning and preprocessing
+- Sorting and ranking algorithms
+- Defensive programming (error handling)
+- Command-line interaction
+- Clean code practices
 
-🚀 What this project does
+  ## ▶️ How to Run
 
-A Python-based command-line tool that:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/vaishnavi-pandith/student_data_automation.git
+   cd student_data_automation
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+3. Run the application:
+   ```bash
+   python src/main.py
+4. Follow the on-screen prompts to:
+   - Load student data
+   - Sort and rank records
+   - Export results to Excel or CSV
 
-Loads CSV / Excel files (Google Forms compatible)
+---
 
-Cleans messy column names automatically
+## 📈 What I Learned:
 
-Handles missing and inconsistent data safely
+- How to design a Python project using a modular architecture
+- Handling real-world, messy Excel/CSV data safely
+- Writing reusable and maintainable code
+- Building interactive CLI-based tools
+- Applying sorting and ranking logic programmatically
+- Formatting and structuring code to production standards
 
-Supports single & multi-column sorting
+---
 
-Ranks students using dense ranking
+## 🔮 Future Improvements
 
-Extracts Top-N performers
+- Add a configuration file for default sorting and ranking rules
+- Implement logging instead of print statements
+- Add unit tests for each module
+- Support weighted scoring and multiple ranking criteria
+- Provide a graphical user interface (GUI) or web interface
 
-Exports clean, structured results to Excel/CSV
+---
 
-🧠 Key Engineering Ideas Used
+## 📌 Use Cases
 
-Defensive file handling (encoding-safe CSV loading)
+- Academic student ranking systems
+- Internal assessment automation
+- Processing Google Form responses
+- Any Excel-based evaluation or scoring workflow
 
-Column normalization to handle inconsistent headers
+---
 
-Stable sorting for predictable multi-column results
+## 🤝 Author
 
-Dense ranking to handle score ties correctly
+**Vaishnavi Pandith M G**  
+Computer Science (AIML) Student  
+Actively seeking internship opportunities in software and data-related roles.
 
-Modular design (each file has a single responsibility)
+---
 
-This project is intentionally built as a foundations-focused system, similar to real internal tools used by teams.
+## 💬 Feedback & Suggestions
 
-🛠️ Tech Stack
+I’m continuously learning and improving as a developer.  
+If you’re a recruiter, engineer, or student reviewing this project, I’d appreciate any constructive feedback or suggestions for improvement.
 
-Python
 
-Pandas
-
-OpenPyXL
-
-Regular Expressions
-
-Command-Line Interface (CLI)
-
-📁 Project Structure
-student-data-automation/
-│
-├── data/        # Input files (CSV / Excel)
-├── output/      # Generated ranked results
-├── src/
-│   ├── loader.py
-│   ├── cleaner.py
-│   ├── sorter.py
-│   ├── ranker.py
-│   ├── exporter.py
-│   └── main.py
-│
-├── requirements.txt
-└── README.md
-
-▶️ How to run
-pip install -r requirements.txt
-python src/main.py
-
-
-The program guides you interactively to:
-
-select file
-
-apply filters
-
-choose sorting & ranking logic
-
-export results
-
-📌 Example Use Cases
-
-Rank students by CGPA
-
-Extract Top-10 performers
-
-Filter by section or branch
-
-Clean Google Form responses automatically
-
-⚠️ Limitations (intentional)
-
-CLI-based (no GUI yet)
-
-Filtering currently supports equality checks
-
-Designed for structured tabular data
-
-These were deliberate choices to keep the focus on correctness and clarity.
-
-🔮 Future Improvements
-
-Numeric range filters (e.g., CGPA > 8.5)
-
-Multiple filter conditions
-
-Config-based execution (no prompts)
-
-Unit tests & logging
-
-Simple web or GUI interface
-
-🎯 What I learned
-
-Handling real-world data inconsistencies
-
-Writing defensive, readable Python code
-
-Designing modular data pipelines
-
-Translating messy input into structured output
-
-👤 About Me
-
-Computer Science student focused on strong fundamentals, problem solving, and building reliable systems.
-Currently seeking Software Engineering Internship opportunities.
-
-⭐ If you’re a recruiter or engineer
-
-I’d love feedback, suggestions, or a quick conversation about this project or internships.
