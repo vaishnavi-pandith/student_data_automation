@@ -1,17 +1,29 @@
+# --------------------
 # Python
+# --------------------
 __pycache__/
 *.pyc
 venv/
 .venv/
 
-# Data files (avoid uploading real data)
+# --------------------
+# Data files
+# --------------------
+# Ignore all real data
 data/*.csv
 data/*.xlsx
 data/*.xls
 
+# Allow fake demo dataset
+!data/student_dataset_100.csv
+
+# --------------------
 # Output files
+# --------------------
 output/
 
+# --------------------
 # OS files
+# --------------------
 .DS_Store
 Thumbs.db
